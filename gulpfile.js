@@ -46,6 +46,15 @@ gulp.task('image', function() {
         .pipe(gulp.dest('build/static/images'));
 });
 
+//Nunjucks Task
+
+gulp.task('nunjucks', function() {
+    gulp.src('src/**.html')
+        .pipe(nunjucks.compile())
+        .pipe(gulp.dest('build'));
+});
+
+
 //Watch Task
 //Watches for changings
 gulp.task('watch', ['build'], function() {
@@ -66,6 +75,6 @@ gulp.task('webserver', function() {
 });
 
 //Build Task
-gulp.task('build', ['scripts', 'styles', 'copy', 'image']);
+gulp.task('build', ['scripts', 'styles', 'copy', 'image', 'nunjucks']);
 
 gulp.task('default', ['watch']);
