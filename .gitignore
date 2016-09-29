@@ -2,7 +2,7 @@
 .idea
 
 # Compiled static
-static
+build
 
 # Logs
 logs
