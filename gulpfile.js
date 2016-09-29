@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
-    webserver = require('gulp-webserver'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     imagemin = require('gulp-imagemin'),
+    connect = require('gulp-connect'),
     nunjucks = require('gulp-nunjucks');
 
     
@@ -10,6 +10,18 @@ function errorLog(error) {
     console.error.bind(error);
     this.emit('end');
 }
+
+//Webserver Task
+//Runs webserver
+gulp.task('connect', function() {
+    connect.server({
+        root: 'build',
+        host: '0.0.0.0',
+        port: 8000,
+        fallback: 'index.html',
+        livereload: true
+    });
+});
 
 //Copy Task
 //Copies font-awesome
@@ -49,11 +61,11 @@ gulp.task('image', function() {
 //Nunjucks Task
 
 gulp.task('nunjucks', function() {
-    gulp.src('src/**.html')
+    gulp.src('src/*.html')
         .pipe(nunjucks.compile())
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'))
+        .pipe(connect.reload());
 });
-
 
 //Watch Task
 //Watches for changings
@@ -62,19 +74,12 @@ gulp.task('watch', ['build'], function() {
     gulp.watch('src/static_src/sass/*.scss', ['styles']);
     gulp.watch('src/static_src/font-awesome-4.6.3/**', ['copy']);
     gulp.watch('src/static_src/images/**/*', ['image']);
-});
-
-//Webserver Task
-//Runs webserver
-gulp.task('webserver', function() {
-  gulp.src('build')
-    .pipe(webserver({
-      fallback: 'index.html',
-      host: '0.0.0.0'
-    }));
+    gulp.watch('src/*.html', ['nunjucks']);
 });
 
 //Build Task
 gulp.task('build', ['scripts', 'styles', 'copy', 'image', 'nunjucks']);
 
-gulp.task('default', ['watch']);
+gulp.task('webserver', ['connect', 'watch']);
+
+gulp.task('default', ['webserver']);
