@@ -10,14 +10,12 @@ function errorLog(error) {
     this.emit('end');
 }
 
-/*
 //Copy Task
 //Copies font-awesome
 gulp.task('copy', function() {
     gulp.src('static_src/font-awesome-4.6.3/**')
         .pipe(gulp.dest('static/font-awesome-4.6.3'));
 });
-*/
 
 //Scripts Task
 //Uglifies JS
