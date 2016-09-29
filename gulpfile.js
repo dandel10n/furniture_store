@@ -18,7 +18,7 @@ gulp.task('connect', function() {
         root: 'build',
         host: '0.0.0.0',
         port: 8000,
-        fallback: 'index.html',
+        index: 'index.html',
         livereload: true
     });
 });
