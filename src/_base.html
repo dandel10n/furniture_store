@@ -4,8 +4,51 @@
         <meta charset="UTF-8">
         <title>Furniture Store</title>
         <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/bebas-neue/css/MyFontsWebfontsKit.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     </head>
     <body>
-        {% block index %}{% endblock %}
+        <header class="header">
+            <section class="header_box">
+
+                <a href="#" class="logo"><img src="static/img/logo.png" alt="logo"></a>
+
+                <nav class="social_media">
+                    <a href="#" class="social_media__link"><img src="static/img/facebook.png" alt="facebook link"></a>
+                    <a href="#" class="social_media__link"><img src="static/img/vk.png" alt="vkontakte link"></a>
+                    <a href="#" class="social_media__link"><img src="static/img/insta.png" alt="instagramm link"></a>
+                    <a href="#" class="social_media__link"><img width="19" height="23" src="static/img/youtube.png" alt="youtube link"></a>
+                </nav>
+
+                <nav class="navigation">
+                        <a class="navigation__button" href="#">home</a>
+                        <a class="navigation__button" href="#">shop</a>
+                        <a class="navigation__button" href="#">portfolio</a>
+                        <a class="navigation__button" href="#">blog</a>
+                        <a class="navigation__button" href="#">contact</a>
+                </nav>
+
+                <form class="search-form">
+                    <input class="search-form__input search-form__input_hidden">
+                    <a href="#" class="search-form__button"><img src="static/img/search_icon.png" alt="search"></a>
+                </form>
+            </section>
+        </header>
+
+        <section class="preview">
+
+            <img src="static/img/home.png" alt="" class="preview__image">
+
+            <article class="article">
+                <h1 class="article__header">concrete furniture</h1>
+                <p class="article__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
+                <a href="" class="button article__button">shop now</a>
+            </article>
+
+            <div class="listing"></div>
+            <div class="listing"></div>
+
+        </section>
+        <!--{% block index %}{% endblock %}-->
     </body>
 </html>

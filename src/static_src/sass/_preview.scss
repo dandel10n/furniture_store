@@ -1,0 +1,49 @@
+.preview {
+  height: 692px;
+  background-color: #000;
+}
+
+.preview__image {
+  float: left;
+}
+
+.article {
+  float: left;
+  margin-top: 160px;
+  color: #fff;
+  width: 471px;
+  margin-left: 5%;
+}
+
+.article__header {
+  font-size: 130px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.792;
+  text-align: left;
+  letter-spacing: 8px;
+  padding-bottom: 35px;
+}
+
+.article__paragraph {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: left;
+  min-height: 61px;
+  padding-bottom: 65px;
+}
+
+.button {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.article__button {
+  background-color: #4e26fd;
+  line-height: 52px;
+}

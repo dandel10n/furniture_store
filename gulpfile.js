@@ -26,8 +26,8 @@ gulp.task('connect', function() {
 //Copy Task
 //Copies font-awesome
 gulp.task('copy', function() {
-    gulp.src('src/static_src/font-awesome-4.6.3/**')
-        .pipe(gulp.dest('build/static/font-awesome-4.6.3'));
+    gulp.src('src/static_src/bebas-neue/**')
+        .pipe(gulp.dest('build/static/bebas-neue'));
 });
 
 //Scripts Task
@@ -53,9 +53,9 @@ gulp.task('styles', function() {
 //Image Task
 //Compress
 gulp.task('image', function() {
-    gulp.src('src/static_src/images/**/*')
+    gulp.src('src/static_src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('build/static/images'));
+        .pipe(gulp.dest('build/static/img'));
 });
 
 //Nunjucks Task
@@ -72,7 +72,7 @@ gulp.task('nunjucks', function() {
 gulp.task('watch', ['build'], function() {
     gulp.watch('src/static_src/js/*.js', ['scripts']);
     gulp.watch('src/static_src/sass/*.scss', ['styles']);
-    gulp.watch('src/static_src/font-awesome-4.6.3/**', ['copy']);
+    gulp.watch('src/static_src/bebas-neue/**', ['copy']);
     gulp.watch('src/static_src/images/**/*', ['image']);
     gulp.watch('src/*.html', ['nunjucks']);
 });
