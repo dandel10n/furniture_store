@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Furniture Store</title>
         <link rel="stylesheet" href="static/css/style.css">
         <link rel="stylesheet" href="static/bebas-neue/css/MyFontsWebfontsKit.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     </head>
+
     <body>
         <header class="header">
             <section class="header_box">
@@ -20,12 +23,14 @@
                     <a href="#" class="social_media__link"><img width="19" height="23" src="static/img/youtube.png" alt="youtube link"></a>
                 </nav>
 
+                <img src="static/img/hamburger_menu.png" alt="menu button" class="menu">
+                <!--для активации меню добавить класс navigation_active-->
                 <nav class="navigation">
-                        <a class="navigation__button" href="#">home</a>
-                        <a class="navigation__button" href="#">shop</a>
-                        <a class="navigation__button" href="#">portfolio</a>
-                        <a class="navigation__button" href="#">blog</a>
-                        <a class="navigation__button" href="#">contact</a>
+                    <a class="navigation__button" href="#">home</a>
+                    <a class="navigation__button" href="#">shop</a>
+                    <a class="navigation__button" href="#">portfolio</a>
+                    <a class="navigation__button" href="#">blog</a>
+                    <a class="navigation__button" href="#">contact</a>
                 </nav>
 
                 <form class="search-form">
@@ -37,17 +42,30 @@
 
         <section class="preview">
 
-            <img src="static/img/home.png" alt="" class="preview__image">
+            <div class="catalog-page">
+                <div class="listing-left"></div>
+                <div class="listing-right"></div>
+            </div>
 
-            <article class="article">
-                <h1 class="article__header">concrete furniture</h1>
-                <p class="article__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
-                <a href="" class="button article__button">shop now</a>
+            <article class="article preview__article">
+                <h1 class="article__header preview__header">concrete furniture</h1>
+                <p class="article__paragraph preview__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
+                <a href="#" class="button article__button">shop now</a>
             </article>
 
-            <div class="listing"></div>
-            <div class="listing"></div>
+        </section>
 
+        <section class="about-us">
+
+            <article class="article about-us__article">
+                <h2 class="article__header about-us__header">made with a soul</h2>
+                <p class="article__paragraph about-us__paragraph">MONE studio produces concrete decor of excellent quality and at reasonable prices. You have a Loft? You to us.</p>
+                <a href="#" class="about-us__link">Learn more about us</a>
+            </article>
+            <div class="slides">
+                <img src="static/img/design-decoration2.png" alt="" class="big-img">
+                <img src="static/img/design-decoration.png" alt="" class="little-img">
+            </div>
         </section>
         <!--{% block index %}{% endblock %}-->
     </body>

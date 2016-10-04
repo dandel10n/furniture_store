@@ -1,49 +1,99 @@
 .preview {
-  height: 692px;
+  height: 43.25rem;
   background-color: #000;
 }
 
-.preview__image {
-  float: left;
+.catalog-page {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  z-index: 1;
+  background: url(../img/home.png) 100% 100% no-repeat;
+  background-size: cover;
 }
 
 .article {
+  width: 29.4375rem;
   float: left;
-  margin-top: 160px;
+}
+
+.preview__article {
+  margin-top: 10rem;
   color: #fff;
-  width: 471px;
   margin-left: 5%;
 }
 
 .article__header {
-  font-size: 130px;
-  font-weight: bold;
   text-transform: uppercase;
-  line-height: 0.792;
+}
+
+.preview__header {
+  font-size: 8.125rem;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
   text-align: left;
-  letter-spacing: 8px;
-  padding-bottom: 35px;
+  padding-bottom: 2.1875rem;
+  line-height: 0.792;
 }
 
 .article__paragraph {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.5;
   text-align: left;
-  min-height: 61px;
-  padding-bottom: 65px;
+  min-height: 3.8125rem;
+}
+
+.preview__paragraph {
+  padding-bottom: 4.0625rem;
 }
 
 .button {
   display: block;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
   color: #fff;
+  width: 9.375rem;
+  height: 3.25rem;
 }
 
 .article__button {
   background-color: #4e26fd;
-  line-height: 52px;
+  line-height: 3.25rem;
+}
+
+.listing-left {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: #fff url(../img/sprite.png) 0 -44px;
+
+  &:hover {
+    background: #4e26fd url(../img/sprite.png) -88px -88px;
+  }
+}
+
+.listing-right {
+  position: absolute;
+  bottom: 0;
+  right: -44px;
+  width: 44px;
+  height: 44px;
+  background: #fff url(../img/sprite.png) -44px -44px;
+
+  &:hover {
+    background: #4e26fd url(../img/sprite.png) -44px 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .catalog-page {
+    width: 43.0625rem;
+    height: 43.25rem;
+    float: left;
+  }
 }

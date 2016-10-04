@@ -1,0 +1,44 @@
+.about-us {
+  height: 655px;
+  color: #000;
+  margin-top: 145px;
+}
+
+.about-us__article {
+  margin-left: 100px;
+}
+
+.about-us__link {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: #b2b2b2;
+  text-decoration: underline;
+  line-height: 1.857;
+}
+
+.about-us__header {
+  font-size: 60px;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+}
+
+.about-us__paragraph {
+  width: 400px;
+  margin-bottom: 60px;
+  letter-spacing: 0.5px;
+}
+
+.slides {
+  position: relative;
+}
+
+.little-img {
+  position: absolute;
+  top: -85px;
+  right: 98px;
+}
+
+.picture_2 {
+  width: 601px;
+  height: 411px;
+}
