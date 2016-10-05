@@ -14,7 +14,7 @@
         <header class="header">
             <section class="header_box">
 
-                <a href="#" class="logo"><img src="static/img/logo.png" alt="logo"></a>
+                <img src="static/img/logo.png" alt="logo" class="logo">
 
                 <nav class="social_media">
                     <a href="#" class="social_media__link"><img src="static/img/facebook.png" alt="facebook link"></a>
@@ -34,6 +34,7 @@
                 </nav>
 
                 <form class="search-form">
+                    <!--для активации формы добавить search-form__input_active-->
                     <input class="search-form__input search-form__input_hidden">
                     <a href="#" class="search-form__button"><img src="static/img/search_icon.png" alt="search"></a>
                 </form>
@@ -42,30 +43,37 @@
 
         <section class="preview">
 
-            <div class="catalog-page">
+            <section class="catalog-page catalog-photo">
                 <div class="listing-left"></div>
                 <div class="listing-right"></div>
-            </div>
+            </section>
 
-            <article class="article preview__article">
-                <h1 class="article__header preview__header">concrete furniture</h1>
-                <p class="article__paragraph preview__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
-                <a href="#" class="button article__button">shop now</a>
-            </article>
+            <section class="catalog-page">
+                <article class="article preview__article">
+                    <h1 class="article__header preview__header">concrete furniture</h1>
+                    <p class="article__paragraph preview__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
+                    <a href="#" class="button article__button">shop now</a>
+                </article>
+            </section>
 
         </section>
 
-        <section class="about-us">
+        <section class="container">
 
-            <article class="article about-us__article">
-                <h2 class="article__header about-us__header">made with a soul</h2>
-                <p class="article__paragraph about-us__paragraph">MONE studio produces concrete decor of excellent quality and at reasonable prices. You have a Loft? You to us.</p>
-                <a href="#" class="about-us__link">Learn more about us</a>
-            </article>
-            <div class="slides">
-                <img src="static/img/design-decoration2.png" alt="" class="big-img">
-                <img src="static/img/design-decoration.png" alt="" class="little-img">
-            </div>
+            <section class="about-us">
+
+                <article class="article about-us__article">
+                    <h2 class="article__header about-us__header">made with a soul</h2>
+                    <p class="article__paragraph about-us__paragraph">MONE studio produces concrete decor of excellent quality and at reasonable prices. You have a Loft? You to us.</p>
+                    <a href="#" class="about-us__link">Learn more about us</a>
+                </article>
+
+                <div class="slides">
+                    <img src="static/img/design-decoration2.png" alt="" class="big-img">
+                    <img src="static/img/design-decoration.png" alt="" class="little-img">
+                </div>
+            </section>
+
         </section>
         <!--{% block index %}{% endblock %}-->
     </body>
