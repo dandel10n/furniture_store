@@ -23,7 +23,7 @@
 .preview__header {
   text-transform: uppercase;
   font-size: 8.125rem;
-  letter-spacing: 0.5rem;
+  /*letter-spacing: 0.5rem;*/
   font-weight: bold;
   text-align: left;
   padding-bottom: 2.1875rem;
@@ -87,18 +87,18 @@
 @media screen and (min-width: 700px) {
 
   .preview {
-    height: 43.25rem;
+    height: 40rem;
   }
 
   .catalog-page {
-    width: 70%;
-    height: 43.25rem;
+    width: 50%;
+    height: 40rem;
     float: left;
     z-index: 1;
   }
 
   .catalog-photo {
-    width: 30%;
+    width: 50%;
   }
 
   .listing-left {
@@ -129,18 +129,30 @@
   }
 
   .preview__article {
-    width: 29.4375rem;
-    float: left;
+    width: 90%;
     display: block;
+  }
+
+  .preview__header {
+    font-size: 5rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .catalog-page {
-    width: 50%;
+
+  .preview {
+    height: 43.25rem;
   }
 
-  .catalog-photo {
-    width: 50%;
+  .catalog-page {
+    height: 43.25rem;
+  }
+
+  .preview__article {
+    width: 29rem;
+  }
+
+  .preview__header {
+    font-size: 8.125rem;
   }
 }
