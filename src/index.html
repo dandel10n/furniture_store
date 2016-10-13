@@ -1,5 +1,125 @@
 {% extends "_base.html" %}
 
-<!--{% block index %}
-    <p>This is an index page</p>
-{% endblock %}-->
+{% block index %}
+<section class="preview">
+
+    <section class="catalog-page catalog-photo">
+        <div class="listing-left"></div>
+        <div class="listing-right"></div>
+    </section>
+
+    <section class="catalog-page">
+        <article class="article preview__article">
+            <h1 class="article__header preview__header">concrete furniture</h1>
+            <p class="article__paragraph preview__paragraph">We fill the space content.High-quality, beautiful, solid and pleasant to the touch. Furniture and decoration of concrete? You to us.</p>
+            <a href="#" class="button article__button">shop now</a>
+        </article>
+    </section>
+
+</section>
+
+<section class="container">
+
+    <section class="about-us">
+
+        <article class="article about-us__article">
+            <h2 class="article__header about-us__header">made with a soul</h2>
+            <p class="article__paragraph about-us__paragraph">MONE studio produces concrete decor of excellent quality and at reasonable prices. You have a Loft? You to us.</p>
+            <a href="#" class="about-us__link">Learn more about us</a>
+        </article>
+
+        <div class="slides">
+            <img src="static/img/design-decoration2.png" alt="" class="big-img">
+            <img src="static/img/design-decoration.png" alt="" class="little-img">
+        </div>
+
+    </section>
+
+    <section class="catalog">
+
+        <!--for activation the menu add shop__menu_active class-->
+        <a class="shop" href="#">Shop
+            <p class="shop__menu shop__menu_active"></p>
+        </a>
+
+        <!--for activation the menu add catalog_active class-->
+        <nav class="catalog__pages catalog_active">
+            <a href="#" class="catalog__page">pots of concrete</a>
+            <a href="#" class="catalog__page">3d panels</a>
+            <a href="#" class="catalog__page">concrete furniture</a>
+            <a href="#" class="catalog__page">dining tables</a>
+        </nav>
+
+        <section class="catalog__items">
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item1.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Concrete self MONOCUBE</p>
+                <p class="item__price">$ 1000</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item2.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Countertop rectangular for dining table</p>
+                <p class="item__price">$ 1650</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item3.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Concrete pot Saturn</p>
+                <p class="item__price">$ 1200</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item4.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Concrete pot Boston</p>
+                <p class="item__price">$ 2000</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item2.png" alt="" class="item__photo">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Countertop rectangular for dining table</p>
+                <p class="item__price">$ 1750</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item4.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Countertop rectangular for dining table</p>
+                <p class="item__price">$ 900</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item1.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Concrete pot Saturn</p>
+                <p class="item__price">$ 1520</p>
+            </a>
+            <a href="#" class="item">
+                <div class="item__img">
+                    <img src="static/img/item5.png" alt="">
+                    <p class="item__img_desc">See more</p>
+                </div>
+                <p class="item__name">Concrete pot Boston</p>
+                <p class="item__price">$ 2000</p>
+            </a>
+        </section>
+        <nav class="show-more">
+            <a href="#" class="show-more__btn"></a>
+        </nav>
+    </section>
+
+</section>
+{% endblock %}
