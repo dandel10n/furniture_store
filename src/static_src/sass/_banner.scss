@@ -1,8 +1,13 @@
 .banner {
-  min-height: 350px;
-  max-height: 500px;
+  min-height: 21.875rem;
+  max-height: 31.25rem;
   background-color: #000;
-  margin-top: 78px;
+  margin-top: 4.875rem;
+}
+
+.banner__page {
+  width: 100%;
+  float: left;
 }
 
 .banner__article {
@@ -11,28 +16,24 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 350px;
-  max-height: 500px;
+  min-height: 21.875rem;
+  max-height: 31.25rem;
 }
 
 .banner__header {
-  font-size: 60px;
-  padding-bottom: 36px;
+  padding-bottom: 2.25rem;
   text-align: center;
   width: 90%;
 }
 
 .banner__paragraph {
   width: 90%;
-  min-height: 135px;
+  min-height: 8.4375rem;
   text-align: center;
 }
 
 .banner__button {
-  width: 125px;
-  height: 52px;
-  line-height: 52px;
-  background-color: #4e26fd;
+  width: 7.8125rem;
 }
 
 .banner-photo {
@@ -42,27 +43,30 @@
 @media screen and (min-width: 700px) {
 
   .banner {
-    height: 500px;
+    min-height: 31.25rem;
+  }
+
+  .banner__page {
+    width: 50%;
   }
 
   .banner__article {
-    height: 500px;
+    min-height: 31.25rem;
   }
 
   .banner-photo {
-    height: 500px;
+    height: 31.25rem;
     display: inline-block;
     background: url(../img/banner_img.png) 100% 100% no-repeat;
     background-size: cover;
   }
 }
 
-
 @media screen and (min-width: 1000px) {
 
   .banner__article {
     align-items: flex-start;
-    margin-left: 65px;
+    margin-left: 4.0625rem;
   }
 
   .banner__paragraph {
@@ -71,7 +75,7 @@
   }
 
   .banner__header {
-    font-size: 78px;
+    font-size: 4.875rem;
     text-align: left;
   }
 

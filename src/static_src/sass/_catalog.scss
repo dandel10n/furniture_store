@@ -199,7 +199,9 @@
   .catalog__page {
     width: 14.0625rem;
   }
+}
 
+@media screen and (min-width: 1200px) {
   .catalog__items {
     justify-content: space-between;
   }
