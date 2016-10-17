@@ -1,0 +1,142 @@
+.blog {
+  min-height: 775px;
+}
+
+.blog__posts {
+  min-height: 511px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.blog__post {
+  border-top: 2px solid #ededed;
+  border-bottom: 2px solid #ededed;
+  width: 100%;
+  min-height: 460px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  margin-bottom: 2rem;
+
+  &:hover {
+    border-top: 2px solid #4e26fd;
+    border-bottom: 2px solid #4e26fd;
+  }
+
+  &:hover .blog__header{
+    color: #4e26fd;
+  }
+}
+
+.blog__header {
+  font-size: 24px;
+  padding-bottom: 25px;
+}
+
+.blog__text {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  width: 90%;
+  margin: auto;
+  min-height: 95px;
+}
+
+.blog__img {
+  margin: 32px auto;
+  position: relative;
+  width: 280px;
+  height: 195px;
+
+  &:hover .blog__img_desc {
+    visibility: visible;
+  }
+}
+
+.blog__photo1 {
+  background: url(../img/blog1.png) 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.blog__photo2 {
+  background: url(../img/blog2.png) 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.blog__photo3 {
+  background: url(../img/blog1.png) 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.blog__photo,
+.blog__img_desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+}
+
+.blog__img_desc {
+  visibility: hidden;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  padding-top: 35%;
+  background-color: rgba(78, 38, 235, 0.702);
+}
+
+.post__date {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: #b2b2b2;
+  background-color: #fff;
+  width: 132px;
+  height: 14px;
+  margin: auto;
+  margin-top: -7px;
+}
+
+@media screen and (min-width: 600px) {
+  .blog__posts {
+    justify-content: space-around;
+    margin-top: 70px;
+  }
+
+  .blog__post {
+    width: 300px;
+    border: 2px solid #ededed;
+    min-height: 511px;
+
+    &:hover {
+      border: 2px solid #4e26fd;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .blog__post {
+    width: 330px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .blog__img {
+    width: 325px;
+    height: 235px;
+  }
+
+  .blog__posts {
+    justify-content: space-between;
+  }
+
+  .blog__post {
+    width: 370px;
+  }
+}
