@@ -140,10 +140,10 @@
   border: 1px solid #b2b2b2;
   width: 46px;
   height: 46px;
-  background: #fff url(../img/show_more_btn.png) 0 0;
+  background: #fff url(../img/arrows_sprite.png) -44px -88px;
 
   &:hover {
-    background: #4e26fd url(../img/show_more_btn.png) -46px 0;
+    background: #4e26fd url(../img/arrows_sprite.png) 0 -88px;
   }
 }
 
