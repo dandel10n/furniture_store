@@ -1,0 +1,27 @@
+.contact {
+  color: white;
+}
+
+.contact__block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  min-height: 500px;
+  background-color: #000;
+  margin-top: 54px;
+}
+
+#map {
+  width: 50%;
+  height: 500px;
+}
+
+.contact__info {
+  width: 50%;
+  height: 500px;
+  float: right;
+}
+
+.city__active {
+  display: block;
+}
