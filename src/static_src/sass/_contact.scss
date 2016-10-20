@@ -68,6 +68,24 @@
   margin-bottom: 2rem;
 }
 
+.contact-icon_pointer {
+  width: 17px;
+  height: 24px;
+  background: url(../img/contacts-sprite.png) 21px -47px;
+}
+
+.contact-icon_phone {
+  width: 15px;
+  height: 25px;
+  background: url(../img/contacts-sprite.png) 21px 0;
+}
+
+.contact-icon_mail {
+  width: 21px;
+  height: 15px;
+  background: url(../img/contacts-sprite.png) 21px -29px;
+}
+
 .contact__button {
   display: block;
   width: 189px;

@@ -40,8 +40,27 @@
 }
 
 .icon {
+  display: inline-block;
   margin-right: 1rem;
   vertical-align: middle;
+}
+
+.footer-icon_pointer {
+  width: 11px;
+  height: 16px;
+  background: url(../img/contacts-sprite.png) 0 -47px;
+}
+
+.footer-icon_phone {
+  width: 12px;
+  height: 20px;
+  background: url(../img/contacts-sprite.png) 0 0;
+}
+
+.footer-icon_mail {
+  width: 17px;
+  height: 11px;
+  background: url(../img/contacts-sprite.png) 0 -29px;
 }
 
 .col-1-3 {
