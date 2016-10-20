@@ -32,6 +32,9 @@
 
 .contacts__text {
   font-family: 'Open Sans', sans-serif;
+}
+
+.footer__contacts {
   font-size: 14px;
   margin-bottom: 1rem;
 }
@@ -138,10 +141,7 @@
     order: 2;
   }
 
-  .contacts {
-    padding: 0;
-  }
-
+  .contacts,
   .networks {
     padding: 0;
   }

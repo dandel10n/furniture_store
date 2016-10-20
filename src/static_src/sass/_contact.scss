@@ -2,26 +2,107 @@
   color: white;
 }
 
-.contact__block {
+.contact-block {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  min-height: 500px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  min-height: 50rem;
   background-color: #000;
-  margin-top: 54px;
+  margin-top: 3.375rem;
 }
 
 #map {
-  width: 50%;
-  height: 500px;
+  width: 100%;
+  height: 18.75rem;
+  order: 2;
 }
 
 .contact__info {
-  width: 50%;
-  height: 500px;
-  float: right;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  margin: 3.75rem 2.5rem;
 }
 
-.city__active {
+.contact__city {
+  display: none;
+}
+
+.city_active {
   display: block;
+}
+
+.city__pages {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.city__page {
+  font-size: 1.5rem;
+  display: inline-block;
+  height: 3.25rem;
+  line-height: 3.25rem;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3.125rem;
+  padding: 0 1.5rem;
+
+  &:hover {
+    background-color: #4e26fd;
+    color: #fff;
+  }
+}
+
+.city__page_active {
+  background-color: #4e26fd;
+}
+
+.contact-block__text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact__button {
+  display: block;
+  width: 189px;
+  background-color: #000;
+  border: 2px solid #fff;
+  margin-top: 62px;
+  line-height: 3rem;
+
+  &:hover {
+    background-color: #4e26fd;
+    border: 2px solid #4e26fd;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .contact-block {
+    flex-flow: row nowrap;
+    min-height: 31.25rem;
+  }
+
+  #map {
+    width: 50%;
+    height: 500px;
+    order: 1;
+  }
+
+  .contact__info {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    order: 2;
+  }
+
+  .city__page {
+    padding: 0 2.25rem;
+  }
+
 }
