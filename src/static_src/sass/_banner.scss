@@ -34,6 +34,11 @@
 
 .banner__button {
   width: 7.8125rem;
+
+  &:hover {
+    color: #4e26fd;
+    background-color: #fff;
+  }
 }
 
 .banner-photo {

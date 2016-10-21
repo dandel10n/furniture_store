@@ -62,6 +62,11 @@
 
 .preview__button {
   width: 9.375rem;
+
+  &:hover {
+    color: #4e26fd;
+    background-color: #fff;
+  }
 }
 
 .listing-left,
