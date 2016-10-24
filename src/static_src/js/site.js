@@ -14,7 +14,7 @@ $(document).ready(function() {
         $(this).toggleClass("search-form_active");
     });
 
-    $(".preview__listing-right").click(function() {
+    $(".listing-right").click(function() {
         currentIndex += 1;
         if (currentIndex > itemAmt - 1) {
             currentIndex = 0;
@@ -22,7 +22,7 @@ $(document).ready(function() {
         cycleItems();
     });
 
-    $(".preview__listing-left").click(function() {
+    $(".listing-left").click(function() {
 
         currentIndex -= 1;
         if (currentIndex < 0) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
         cycleItems();
     });
 
-    $("#kyiv, #kharkiv, #dnipro").click(function(event){
+    $("#kyiv, #kharkiv, #dnipro, .listing-left, .listing-right").click(function(event){
         event.preventDefault();
     });
 

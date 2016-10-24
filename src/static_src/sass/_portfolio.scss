@@ -1,17 +1,22 @@
 .portfolio {
   min-height: 40rem;
+  position: relative;
 }
 
 .portfolio__blocks {
+  display: none;
+}
+
+.portfolio_active {
+  display: block;
   position: relative;
-  height: 30rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .portfolio__block {
   display: block;
-  position: relative;
+  position: absolute;
 
   &:hover .portfolio__img_desc {
     visibility: visible;
@@ -188,13 +193,13 @@
   }
 
   .portfolio__listing-left {
-    top: 16.875rem;
+    top: 21.5rem;
     left: 0;
     border: 1px solid #b2b2b2;
   }
 
   .portfolio__listing-right {
-    top: 16.875rem;
+    top: 21.5rem;
     right: 0;
     border: 1px solid #b2b2b2;
   }
