@@ -1,7 +1,34 @@
+var currentIndex = 0,
+    items = $(".spread"),
+    itemAmt = items.length;
+
+function cycleItems() {
+    var item = $(".spread").eq(currentIndex);
+    items.hide();
+    item.css("display","inline-block");
+}
+
 $(document).ready(function() {
 
     $("#search").click(function() {
         $(this).toggleClass("search-form_active");
+    });
+
+    $(".preview__listing-right").click(function() {
+        currentIndex += 1;
+        if (currentIndex > itemAmt - 1) {
+            currentIndex = 0;
+        }
+        cycleItems();
+    });
+
+    $(".preview__listing-left").click(function() {
+
+        currentIndex -= 1;
+        if (currentIndex < 0) {
+            currentIndex = itemAmt - 1;
+        }
+        cycleItems();
     });
 
     $("#kyiv, #kharkiv, #dnipro").click(function(event){

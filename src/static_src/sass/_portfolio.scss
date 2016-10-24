@@ -73,7 +73,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  border: 1px solid #b2b2b2;
   background: #fff url(../img/arrows_sprite.png) 0 -132px;
 
   &:hover {
@@ -85,7 +84,6 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  border: 1px solid #b2b2b2;
   background: #fff url(../img/arrows_sprite.png) -44px -132px;
 
   &:hover {
@@ -190,26 +188,14 @@
   }
 
   .portfolio__listing-left {
-    position: absolute;
     top: 16.875rem;
     left: 0;
     border: 1px solid #b2b2b2;
-    background: #fff url(../img/arrows_sprite.png) 0 -132px;
-
-    &:hover {
-      background: #4e26fd url(../img/arrows_sprite.png) 0 0;
-    }
   }
 
   .portfolio__listing-right {
-    position: absolute;
     top: 16.875rem;
     right: 0;
     border: 1px solid #b2b2b2;
-    background: #fff url(../img/arrows_sprite.png) -44px -132px;
-
-    &:hover {
-      background: #4e26fd url(../img/arrows_sprite.png) -44px 0;
-    }
   }
 }

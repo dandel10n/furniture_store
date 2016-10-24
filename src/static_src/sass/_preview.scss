@@ -1,12 +1,17 @@
 .preview {
-  height: 35rem;
+  position: relative;
+  min-height: 35rem;
   background-color: #000;
+}
+
+.spread {
+  display: none;
+  width: 100%;
 }
 
 .catalog-photo {
   width: 100%;
   height: 35rem;
-  position: relative;
   background: url(../img/home.png) 100% 100% no-repeat;
   background-size: cover;
 }
@@ -104,9 +109,13 @@
     height: 40rem;
   }
 
+  .spread {
+    width: 100%;
+    height: 40rem;
+  }
+
   .catalog-page {
     width: 50%;
-    height: 40rem;
     float: left;
     z-index: 1;
   }
@@ -117,13 +126,14 @@
 
   .preview__listing-left {
     bottom: 0;
+    right: 50%;
     left: auto;
-    right: 0;
   }
 
   .preview__listing-right {
     bottom: 0;
-    right: -44px;
+    left: 50%;
+    right: auto;
   }
 
   .preview__article {
