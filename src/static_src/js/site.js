@@ -4,8 +4,8 @@ var currentIndex = 0,
 
 function cycleItems() {
     var item = $(".spread").eq(currentIndex);
-    items.hide();
-    item.css("display","inline-block");
+    items.removeClass("spread_active");
+    item.addClass("spread_active");
 }
 
 $(document).ready(function() {
