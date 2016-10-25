@@ -12,6 +12,7 @@
   position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  min-height: 35rem;
 }
 
 .portfolio__block {
@@ -47,9 +48,13 @@
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   color: #fff;
-  padding-top: 30%;
+  padding-top: 35%;
   text-align: center;
   background-color: rgba(78, 38, 235, 0.702);
+}
+
+.main-block__img_desc {
+  padding-top: 30%;
 }
 
 .left-top-block,
@@ -76,7 +81,7 @@
 
 .portfolio__listing-left {
   position: absolute;
-  bottom: 0;
+  bottom: 4.2rem;
   left: 0;
   background: #fff url(../img/arrows_sprite.png) 0 -132px;
 
@@ -87,7 +92,7 @@
 
 .portfolio__listing-right {
   position: absolute;
-  bottom: 0;
+  bottom: 4.2rem;
   right: 0;
   background: #fff url(../img/arrows_sprite.png) -44px -132px;
 
