@@ -1,15 +1,15 @@
-function initSlider(items, nextButton, previousButton, activationClass) {
+function initSlider(elements, activationClass) {
     var currentIndex = 0,
-        itemAmt = items.length;
+        itemAmt = elements.items.length;
 
     function cycleItems() {
-        var item = items.eq(currentIndex);
+        var item = elements.items.eq(currentIndex);
 
-        items.removeClass(activationClass);
+        elements.items.removeClass(activationClass);
         item.addClass(activationClass);
     }
 
-    nextButton.click(function() {
+    elements.nextButton.click(function() {
         currentIndex += 1;
         if (currentIndex > itemAmt - 1) {
             currentIndex = 0;
@@ -17,7 +17,7 @@ function initSlider(items, nextButton, previousButton, activationClass) {
         cycleItems();
     });
 
-    previousButton.click(function() {
+    elements.previousButton.click(function() {
 
         currentIndex -= 1;
         if (currentIndex < 0) {
@@ -34,8 +34,23 @@ $(document).ready(function() {
         $(this).toggleClass("search-form_active");
     });
 
-    initSlider($(".spread"), $(".preview__listing-right"), $(".preview__listing-left"), "spread_active");
-    initSlider($(".portfolio__blocks"), $(".portfolio__listing-right"), $(".portfolio__listing-left"), "portfolio_active");
+    initSlider(
+        {
+            items: $(".spread"),
+            nextButton: $(".preview__listing-right"),
+            previousButton: $(".preview__listing-left")
+        },
+        "spread_active"
+    );
+
+    initSlider(
+        {
+            items: $(".portfolio__blocks"),
+            nextButton: $(".portfolio__listing-right"),
+            previousButton: $(".portfolio__listing-left")
+        },
+        "portfolio_active"
+    );
 
     $("#kyiv, #kharkiv, #dnipro, .listing-left, .listing-right").click(function(event){
         event.preventDefault();
