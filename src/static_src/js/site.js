@@ -25,8 +25,21 @@ function initSlider(elements, activationClass) {
         }
         cycleItems();
     });
-
 }
+
+function changeCity(elements, classes) {
+
+    $(elements.cityPageForActivate).click(function() {
+        var i;
+        $(this).addClass(classes.activationCityPageClass);
+        $(elements.cityForActivate).addClass(classes.activationCityClass);
+        for (i = 0; i < elements.citiesPagesForDeactivate.length; i++) {
+            $(elements.citiesPagesForDeactivate[i]).removeClass(classes.activationCityPageClass);
+            $(elements.citiesForDeactivate[i]).removeClass(classes.activationCityClass);
+        }
+    });
+}
+
 
 $(document).ready(function() {
 
@@ -52,28 +65,42 @@ $(document).ready(function() {
         "portfolio_active"
     );
 
-    $("#kyiv, #kharkiv, #dnipro, .listing-left, .listing-right").click(function(event){
+    $("#kyiv_page, #kharkiv_page, #dnipro_page, .listing-left, .listing-right").click(function(event){
         event.preventDefault();
     });
+    
 
-    $("#kyiv").click(function() {
-        $(this).addClass("city__page_active");
-        $("#kyiv_page").addClass("city_active");
-        $("#kharkiv_page, #dnipro_page").removeClass("city_active");
-        $("#kharkiv, #dnipro").removeClass("city__page_active");
-    });
+    changeCity(
+        {
+            cityForActivate: $("#kyiv"),
+            cityPageForActivate: $("#kyiv_page"),
+            citiesForDeactivate: [$("#kharkiv"), $("#dnipro")],
+            citiesPagesForDeactivate: [$("#kharkiv_page"), $("#dnipro_page")]
+        },
+        {
+            activationCityClass: "city_active",
+            activationCityPageClass: "city__page_active"
+        });
+    changeCity(
+        {
+            cityForActivate: $("#kharkiv"),
+            cityPageForActivate: $("#kharkiv_page"),
+            citiesForDeactivate: [$("#kyiv"), $("#dnipro")],
+            citiesPagesForDeactivate: [$("#kyiv_page"), $("#dnipro_page")]
+        },
+        {
+            activationCityClass: "city_active",
+            activationCityPageClass: "city__page_active"
+        });
+    changeCity(
+        {
+            cityForActivate:$("#dnipro"),
+            cityPageForActivate: $("#dnipro_page"),
+            citiesForDeactivate: [$("#kharkiv"), $("#kyiv")],
+            citiesPagesForDeactivate: [$("#kharkiv_page"), $("#kyiv_page")]},
+        {
+            activationCityClass:"city_active",
+            activationCityPageClass: "city__page_active"
+        });
 
-    $("#kharkiv").click(function() {
-        $(this).addClass("city__page_active");
-        $("#kharkiv_page").addClass("city_active");
-        $("#kyiv_page, #dnipro_page").removeClass("city_active");
-        $("#kyiv, #dnipro").removeClass("city__page_active");
-    });
-
-    $("#dnipro").click(function() {
-        $(this).addClass("city__page_active");
-        $("#dnipro_page").addClass("city_active");
-        $("#kyiv_page, #kharkiv_page").removeClass("city_active");
-        $("#kyiv, #kharkiv").removeClass("city__page_active");
-    });
 });
