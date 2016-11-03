@@ -68,7 +68,7 @@ $(document).ready(function() {
     $("#kyiv_page, #kharkiv_page, #dnipro_page, .listing-left, .listing-right").click(function(event){
         event.preventDefault();
     });
-    
+
 
     changeCity(
         {
