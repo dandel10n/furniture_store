@@ -68,3 +68,4 @@ To run local webserver (you can use it for testing on various devices) with watc
 ```
 npm run webserver
 ```
+And then the site will be available on localhost:8000
