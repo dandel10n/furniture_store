@@ -1,106 +1,92 @@
 function initSlider(elements, activationClass) {
-    var currentIndex = 0,
-        itemAmt = elements.items.length;
+    var currentIndex = 0;
+    var itemsAmount = elements.slides.length;
 
     function cycleItems() {
-        var item = elements.items.eq(currentIndex);
+        var item = elements.slides[currentIndex];
 
-        elements.items.removeClass(activationClass);
-        item.addClass(activationClass);
+        for (var i = 0; i < itemsAmount; i++) {
+            elements.slides[i].classList.remove(activationClass);
+        }
+        item.classList.add(activationClass);
     }
 
-    elements.nextButton.click(function() {
+    elements.nextButton.addEventListener("click", function(event) {
+        event.preventDefault();
+
         currentIndex += 1;
-        if (currentIndex > itemAmt - 1) {
+        if (currentIndex > itemsAmount - 1) {
             currentIndex = 0;
         }
         cycleItems();
     });
 
-    elements.previousButton.click(function() {
+    elements.previousButton.addEventListener("click", function(event) {
+        event.preventDefault();
 
         currentIndex -= 1;
         if (currentIndex < 0) {
-            currentIndex = itemAmt - 1;
+            currentIndex = itemsAmount - 1;
         }
         cycleItems();
     });
 }
 
-function changeCity(elements, classes) {
+document.addEventListener("DOMContentLoaded", function() {
 
-    $(elements.cityPageForActivate).click(function() {
-        var i;
-        $(this).addClass(classes.activationCityPageClass);
-        $(elements.cityForActivate).addClass(classes.activationCityClass);
-        for (i = 0; i < elements.citiesPagesForDeactivate.length; i++) {
-            $(elements.citiesPagesForDeactivate[i]).removeClass(classes.activationCityPageClass);
-            $(elements.citiesForDeactivate[i]).removeClass(classes.activationCityClass);
-        }
+    document.getElementById("search").addEventListener("click", function(event){
+        event.preventDefault();
+        this.classList.toggle("search-form_active");
     });
-}
 
+    document.querySelector(".menu").addEventListener("click", function() {
+        document.querySelector('.navigation').classList.toggle("navigation_active");
+    });
 
-$(document).ready(function() {
-
-    $("#search").click(function() {
-        $(this).toggleClass("search-form_active");
+    document.querySelector(".shop").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.querySelector('.shop__menu').classList.toggle("shop__menu_active");
+        document.querySelector('.catalog__pages').classList.toggle("catalog_active");
     });
 
     initSlider(
         {
-            items: $(".spread"),
-            nextButton: $(".preview__listing-right"),
-            previousButton: $(".preview__listing-left")
+            slides: document.querySelectorAll('.spread'),
+            nextButton: document.querySelector(".preview__listing-right"),
+            previousButton: document.querySelector(".preview__listing-left")
         },
         "spread_active"
     );
 
     initSlider(
         {
-            items: $(".portfolio__blocks"),
-            nextButton: $(".portfolio__listing-right"),
-            previousButton: $(".portfolio__listing-left")
+            slides: document.querySelectorAll(".portfolio__blocks"),
+            nextButton: document.querySelector(".portfolio__listing-right"),
+            previousButton: document.querySelector(".portfolio__listing-left")
         },
         "portfolio_active"
     );
 
-    $("#kyiv_page, #kharkiv_page, #dnipro_page, .listing-left, .listing-right").click(function(event){
+    document.addEventListener("click", function(event) {
+        var target = event.target;
+
+        var id = target.getAttribute('data-toggle-id');
+        if (!id) return;
+
         event.preventDefault();
+
+        var onePage = document.getElementById(id);
+        var allPages = document.getElementById("city-pages").getElementsByTagName('section');
+        var cityButtons = document.getElementById("city-pages__buttons").getElementsByTagName('a');
+
+        for (var q = 0; q < cityButtons.length; q++) {
+            cityButtons[q].classList.remove("city__page_active");
+        }
+        target.classList.add("city__page_active");
+
+        for (var i=0; i < allElements.length; i++) {
+            allPages[i].classList.remove("city_active");
+        }
+        onePage.classList.add('city_active');
     });
-
-
-    changeCity(
-        {
-            cityForActivate: $("#kyiv"),
-            cityPageForActivate: $("#kyiv_page"),
-            citiesForDeactivate: [$("#kharkiv"), $("#dnipro")],
-            citiesPagesForDeactivate: [$("#kharkiv_page"), $("#dnipro_page")]
-        },
-        {
-            activationCityClass: "city_active",
-            activationCityPageClass: "city__page_active"
-        });
-    changeCity(
-        {
-            cityForActivate: $("#kharkiv"),
-            cityPageForActivate: $("#kharkiv_page"),
-            citiesForDeactivate: [$("#kyiv"), $("#dnipro")],
-            citiesPagesForDeactivate: [$("#kyiv_page"), $("#dnipro_page")]
-        },
-        {
-            activationCityClass: "city_active",
-            activationCityPageClass: "city__page_active"
-        });
-    changeCity(
-        {
-            cityForActivate:$("#dnipro"),
-            cityPageForActivate: $("#dnipro_page"),
-            citiesForDeactivate: [$("#kharkiv"), $("#kyiv")],
-            citiesPagesForDeactivate: [$("#kharkiv_page"), $("#kyiv_page")]},
-        {
-            activationCityClass:"city_active",
-            activationCityPageClass: "city__page_active"
-        });
-
 });
