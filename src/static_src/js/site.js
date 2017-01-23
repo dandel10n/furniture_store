@@ -76,17 +76,17 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         var onePage = document.getElementById(id);
-        var allPages = onePage.parentNode.querySelectorAll('.contact__city');
-        var cityButtons = target.parentNode.querySelectorAll('.city__page');
+        var allPages = onePage.parentNode.querySelectorAll('.city__page');
+        var cityButtons = target.parentNode.querySelectorAll('.city__button');
 
         for (var q = 0; q < cityButtons.length; q++) {
-            cityButtons[q].classList.remove("city__page_active");
+            cityButtons[q].classList.remove("city__button_active");
         }
-        target.classList.add("city__page_active");
+        target.classList.add("city__button_active");
 
         for (var i=0; i < allPages.length; i++) {
-            allPages[i].classList.remove("city_active");
+            allPages[i].classList.remove("city__page_active");
         }
-        onePage.classList.add('city_active');
+        onePage.classList.add('city__page_active');
     });
 });
