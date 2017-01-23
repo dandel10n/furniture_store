@@ -76,15 +76,15 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         var onePage = document.getElementById(id);
-        var allPages = document.getElementById("city-pages").getElementsByTagName('section');
-        var cityButtons = document.getElementById("city-pages__buttons").getElementsByTagName('a');
+        var allPages = onePage.parentNode.querySelectorAll('.contact__city');
+        var cityButtons = target.parentNode.querySelectorAll('.city__page');
 
         for (var q = 0; q < cityButtons.length; q++) {
             cityButtons[q].classList.remove("city__page_active");
         }
         target.classList.add("city__page_active");
 
-        for (var i=0; i < allElements.length; i++) {
+        for (var i=0; i < allPages.length; i++) {
             allPages[i].classList.remove("city_active");
         }
         onePage.classList.add('city_active');
