@@ -39,15 +39,33 @@ document.addEventListener("DOMContentLoaded", function() {
         this.classList.toggle("search-form_active");
     });
 
-    document.querySelector(".menu").addEventListener("click", function() {
-        document.querySelector('.navigation').classList.toggle("navigation_active");
+    document.querySelector(".header").addEventListener("click", function(event) {
+        var target = event.target;
+
+        var id = target.getAttribute('data-toggle-id');
+        if (!id) return;
+
+        var navigation = document.getElementById(id);
+
+        navigation.classList.toggle("navigation_active");
     });
 
-    document.querySelector(".shop").addEventListener("click", function(event) {
-        event.preventDefault();
-        document.querySelector('.shop__menu').classList.toggle("shop__menu_active");
-        document.querySelector('.catalog__pages').classList.toggle("catalog_active");
-    });
+    var shopButtons = document.querySelectorAll(".shop");
+    for (var a = 0; a < shopButtons.length; a++) {
+        shopButtons[a].addEventListener("click", function (event) {
+            var target = this;
+
+            var id = target.getAttribute('data-toggle-id');
+
+            event.preventDefault();
+
+            var catalog = document.getElementById(id);
+
+            catalog.classList.toggle("catalog_active");
+            target.querySelector('.shop__menu').classList.toggle("shop__menu_active");
+
+        });
+    }
 
     initSlider(
         {
