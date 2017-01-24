@@ -39,12 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
         this.classList.toggle("search-form_active");
     });
 
-    document.querySelector(".header").addEventListener("click", function(event) {
-        var target = event.target;
+    document.getElementById("hamburger-menu").addEventListener("click", function(event) {
+        event.preventDefault();
 
-        var id = target.getAttribute('data-toggle-id');
-        if (!id) return;
-
+        var id = this.getAttribute('data-toggle-id');
         var navigation = document.getElementById(id);
 
         navigation.classList.toggle("navigation_active");
@@ -52,18 +50,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var shopButtons = document.querySelectorAll(".shop");
     for (var a = 0; a < shopButtons.length; a++) {
-        shopButtons[a].addEventListener("click", function (event) {
-            var target = this;
-
-            var id = target.getAttribute('data-toggle-id');
-
+        shopButtons[a].addEventListener("click", function(event) {
             event.preventDefault();
 
+            var id = this.getAttribute('data-toggle-id');
             var catalog = document.getElementById(id);
 
             catalog.classList.toggle("catalog_active");
-            target.querySelector('.shop__menu').classList.toggle("shop__menu_active");
+            this.querySelector('.shop__menu').classList.toggle("shop__menu_active");
+        });
+    }
 
+    var cityButtons = document.querySelectorAll(".city__button");
+    for (var b = 0; b < cityButtons.length; b++) {
+        cityButtons[b].addEventListener("click", function(event) {
+            event.preventDefault();
+
+            var id = this.getAttribute('data-toggle-id');
+            var onePage = document.getElementById(id);
+            var allPages = onePage.parentNode.querySelectorAll('.city__page');
+            var cityButtons = this.parentNode.querySelectorAll('.city__button');
+
+            for (var q = 0; q < cityButtons.length; q++) {
+                cityButtons[q].classList.remove("city__button_active");
+            }
+            this.classList.add("city__button_active");
+
+            for (var i = 0; i < allPages.length; i++) {
+                allPages[i].classList.remove("city__page_active");
+            }
+            onePage.classList.add('city__page_active');
         });
     }
 
@@ -84,27 +100,4 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "portfolio_active"
     );
-
-    document.addEventListener("click", function(event) {
-        var target = event.target;
-
-        var id = target.getAttribute('data-toggle-id');
-        if (!id) return;
-
-        event.preventDefault();
-
-        var onePage = document.getElementById(id);
-        var allPages = onePage.parentNode.querySelectorAll('.city__page');
-        var cityButtons = target.parentNode.querySelectorAll('.city__button');
-
-        for (var q = 0; q < cityButtons.length; q++) {
-            cityButtons[q].classList.remove("city__button_active");
-        }
-        target.classList.add("city__button_active");
-
-        for (var i=0; i < allPages.length; i++) {
-            allPages[i].classList.remove("city__page_active");
-        }
-        onePage.classList.add('city__page_active');
-    });
 });
