@@ -40,7 +40,7 @@ $(document).ready(function() {
     $("#hamburger-menu").on("click", function(event) {
         event.preventDefault();
 
-        var id = $(this).attr('data-toggle-id');
+        var id = $(this).data('toggle-id');
         var navigation = $("#" +id);
 
         navigation.toggleClass("navigation_active");
@@ -49,7 +49,7 @@ $(document).ready(function() {
     $(".shop").on("click", function(event) {
         event.preventDefault();
 
-        var id = $(this).attr('data-toggle-id');
+        var id = $(this).data('toggle-id');
         var catalog = $("#" + id);
 
         catalog.toggleClass("catalog_active");
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(".city__button").on("click", function(event) {
         event.preventDefault();
 
-        var id = $(this).attr('data-toggle-id'),
+        var id = $(this).data('toggle-id'),
             onePage = $("#" + id),
             allPages = onePage.parent('.city__page'),
             cityButtons = $(this).parent('.city__button');
