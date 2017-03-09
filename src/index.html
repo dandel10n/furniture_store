@@ -73,13 +73,14 @@
 
     <section class="catalog">
 
-        <!--for activation the menu add shop__menu_active class-->
-        <a class="shop" href="#">Shop
+
+        <a class="shop" href="#" data-toggle-id="catalog__pages">Shop
+            <!--for activation the menu add shop__menu_active class-->
             <p class="shop__menu"></p>
         </a>
 
         <!--for activation the menu add catalog_active class-->
-        <nav class="catalog__pages">
+        <nav class="catalog__pages" id="catalog__pages">
             <a href="#" class="catalog__page">pots of concrete</a>
             <a href="#" class="catalog__page">3d panels</a>
             <a href="#" class="catalog__page">concrete furniture</a>
@@ -342,28 +343,32 @@
             <div id="map"></div><!--
 
          --><article class="contact__info">
-                <!--For activation city page add city__page_active class-->
-                <div class="city__pages">
-                    <a href="#" class="city__page city__page_active" id="kyiv_page">kyiv</a>
-                    <a href="#" class="city__page" id="kharkiv_page">kharkiv</a>
-                    <a href="#" class="city__page" id="dnipro_page">dnipro</a>
+
+                <div class="city-buttons">
+                    <!--For activation city button add city__button_active class-->
+                    <a href="#" class="city__button city__button_active" data-toggle-id="kyiv">kyiv</a>
+                    <a href="#" class="city__button" data-toggle-id="kharkiv">kharkiv</a>
+                    <a href="#" class="city__button" data-toggle-id="dnipro">dnipro</a>
                 </div>
-                <!--For activation city page add city_active class-->
-                <section class="contact__city city_active" id="kyiv">
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Kyiv, Belomorskaya street, 2</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
-                </section>
-                <section class="contact__city" id="kharkiv">
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Kharkiv, Belomorskaya street, 2</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
-                </section>
-                <section class="contact__city" id="dnipro">
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Dnipro, Belomorskaya street, 2</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
-                    <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
-                </section>
+
+                <div class="city-pages">
+                    <!--For activation city page add city__page_active class-->
+                    <section class="city__page city__page_active" id="kyiv">
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Kyiv, Belomorskaya street, 2</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
+                    </section>
+                    <section class="city__page" id="kharkiv">
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Kharkiv, Belomorskaya street, 2</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
+                    </section>
+                    <section class="city__page" id="dnipro">
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_pointer"></span>Dnipro, Belomorskaya street, 2</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_phone"></span>+38 066 311 3151</p>
+                        <p class="contacts__text contact-block__text"><span class="icon contact-icon_mail"></span>info@ourcompany.com.ua</p>
+                    </section>
+                </div>
 
                 <a href="#" class="button contact__button">contact us</a>
 
