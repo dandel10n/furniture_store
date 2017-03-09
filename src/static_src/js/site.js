@@ -1,17 +1,15 @@
 function initSlider(elements, activationClass) {
-    var currentIndex = 0;
-    var itemsAmount = elements.slides.length;
+    var currentIndex = 0,
+        itemsAmount = elements.slides.length;
 
     function cycleItems() {
-        var item = elements.slides[currentIndex];
+        var item = elements.slides.eq(currentIndex);
 
-        for (var i = 0; i < itemsAmount; i++) {
-            elements.slides[i].classList.remove(activationClass);
-        }
-        item.classList.add(activationClass);
+        elements.slides.removeClass(activationClass);
+        item.addClass(activationClass);
     }
 
-    elements.nextButton.addEventListener("click", function(event) {
+    elements.nextButton.on("click", function(event) {
         event.preventDefault();
 
         currentIndex += 1;
@@ -21,7 +19,7 @@ function initSlider(elements, activationClass) {
         cycleItems();
     });
 
-    elements.previousButton.addEventListener("click", function(event) {
+    elements.previousButton.on("click", function(event) {
         event.preventDefault();
 
         currentIndex -= 1;
@@ -32,71 +30,63 @@ function initSlider(elements, activationClass) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+$(document).ready(function() {
 
-    document.getElementById("search").addEventListener("click", function(event){
+    $("#search").on("click", function(event){
         event.preventDefault();
-        this.classList.toggle("search-form_active");
+        $(this).toggleClass("search-form_active");
     });
 
-    document.getElementById("hamburger-menu").addEventListener("click", function(event) {
+    $("#hamburger-menu").on("click", function(event) {
         event.preventDefault();
 
-        var id = this.getAttribute('data-toggle-id');
-        var navigation = document.getElementById(id);
+        var id = $(this).data('toggle-id');
+        var navigation = $("#" +id);
 
-        navigation.classList.toggle("navigation_active");
+        navigation.toggleClass("navigation_active");
     });
 
-    var shopButtons = document.querySelectorAll(".shop");
-    for (var a = 0; a < shopButtons.length; a++) {
-        shopButtons[a].addEventListener("click", function(event) {
-            event.preventDefault();
+    $(".shop").on("click", function(event) {
+        event.preventDefault();
 
-            var id = this.getAttribute('data-toggle-id');
-            var catalog = document.getElementById(id);
+        var id = $(this).data('toggle-id');
+        var catalog = $("#" + id);
 
-            catalog.classList.toggle("catalog_active");
-            this.querySelector('.shop__menu').classList.toggle("shop__menu_active");
-        });
-    }
+        catalog.toggleClass("catalog_active");
+        $(this).('.shop__menu').toggleClass("shop__menu_active");
+    });
 
-    var cityButtons = document.querySelectorAll(".city__button");
-    for (var b = 0; b < cityButtons.length; b++) {
-        cityButtons[b].addEventListener("click", function(event) {
-            event.preventDefault();
 
-            var id = this.getAttribute('data-toggle-id');
-            var onePage = document.getElementById(id);
-            var allPages = onePage.parentNode.querySelectorAll('.city__page');
-            var cityButtons = this.parentNode.querySelectorAll('.city__button');
+    $(".city__button").on("click", function(event) {
+        event.preventDefault();
 
-            for (var q = 0; q < cityButtons.length; q++) {
-                cityButtons[q].classList.remove("city__button_active");
-            }
-            this.classList.add("city__button_active");
+        var id = $(this).data('toggle-id'),
+            onePage = $("#" + id),
+            allPages = onePage.parent('.city__page'),
+            cityButtons = $(this).parent('.city__button');
 
-            for (var i = 0; i < allPages.length; i++) {
-                allPages[i].classList.remove("city__page_active");
-            }
-            onePage.classList.add('city__page_active');
-        });
-    }
+        cityButtons.removeClass("city__button_active");
+
+        $(this).addClass("city__button_active");
+
+        allPages.removeClass("city__page_active");
+        onePage.addClass('city__page_active');
+    });
 
     initSlider(
         {
-            slides: document.querySelectorAll('.spread'),
-            nextButton: document.querySelector(".preview__listing-right"),
-            previousButton: document.querySelector(".preview__listing-left")
+            slides: $('.spread'),
+            nextButton: $(".preview__listing-right"),
+            previousButton: $(".preview__listing-left")
         },
         "spread_active"
     );
 
     initSlider(
         {
-            slides: document.querySelectorAll(".portfolio__blocks"),
-            nextButton: document.querySelector(".portfolio__listing-right"),
-            previousButton: document.querySelector(".portfolio__listing-left")
+            slides: $(".portfolio__blocks"),
+            nextButton: $(".portfolio__listing-right"),
+            previousButton: $(".portfolio__listing-left")
         },
         "portfolio_active"
     );
